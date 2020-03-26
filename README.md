@@ -1,10 +1,10 @@
-# The Symfony dev instructions kit for macOS
+# The PHP/Symfony dev instructions kit for macOS
 
 **This repository is part of the [symfony-dev-deploy](https://github.com/RomainFallet/symfony-dev-deploy) repository.**
 
 ![Test dev env install script](https://github.com/RomainFallet/symfony-dev-macos/workflows/Test%20dev%20env%20install%20script/badge.svg)
 
-The purpose of this repository is to provide instructions to configure a Symfony development environment on **macOS 10.15**.
+The purpose of this repository is to provide instructions to configure a PHP/Symfony development environment on **macOS 10.15**.
 
 The goal is to provide an opinionated, fully tested environment, that just work.
 
