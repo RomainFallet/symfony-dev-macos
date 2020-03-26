@@ -36,8 +36,6 @@ Its purpose in not to be bullet-proof neither to handle all cases. It's  just he
 
 [Back to top ↑](#table-of-contents)
 
-MacOS 10.15:
-
 ```bash
 # Get and execute script directly
 bash -c "$(curl -L -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/RomainFallet/symfony-dev-macos/master/macos10.15_configure_dev_env.sh)"
@@ -50,8 +48,6 @@ bash -c "$(curl -L -H 'Cache-Control: no-cache' https://raw.githubusercontent.co
 ### Prerequisites
 
 [Back to top ↑](#table-of-contents)
-
-MacOS 10.15:
 
 ![homebrew](https://user-images.githubusercontent.com/6952638/70372309-a0a18380-18dd-11ea-8280-e86e84f51043.png)
 
@@ -70,8 +66,6 @@ Open the Terminal app and type:
 
 ![git](https://user-images.githubusercontent.com/6952638/71176962-3a1c4e00-226b-11ea-83a1-5a66bd37a68b.png)
 
-MacOS 10.15:
-
 ```bash
 # Install
 brew install git
@@ -86,8 +80,6 @@ export PATH="/usr/local/bin:$PATH"
 
 ![symfony](https://user-images.githubusercontent.com/6952638/71176964-3ab4e480-226b-11ea-8522-081106cbff50.png)
 
-MacOS 10.15:
-
 ```bash
 # Download executable in local user folder
 curl -sS https://get.symfony.com/cli/installer | bash
@@ -101,8 +93,6 @@ sudo mv ~/.symfony/bin/symfony /usr/local/bin/symfony
 [Back to top ↑](#table-of-contents)
 
 ![php](https://user-images.githubusercontent.com/6952638/70372327-bca52500-18dd-11ea-8638-7cdab7c5d6e0.png)
-
-MacOS 10.15:
 
 ```bash
 # Install
@@ -134,8 +124,6 @@ sudo sed -i '.backup' -e 's/memory_limit = 128M/memory_limit = -1/g' "${phpinipa
 
 ![composer](https://user-images.githubusercontent.com/6952638/70372308-a008ed00-18dd-11ea-9ee0-61d017dfa488.png)
 
-MacOS 10.15:
-
 ```bash
 # Download installer
 sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -156,8 +144,6 @@ sudo mv /usr/local/bin/composer.phar /usr/local/bin/composer
 
 ![mariadb](https://user-images.githubusercontent.com/6952638/71176963-3a1c4e00-226b-11ea-9627-e64caabef009.png)
 
-MacOS 10.15:
-
 ```bash
 # Install
 brew install mariadb@10.4
@@ -172,8 +158,6 @@ brew services start mariadb
 
 ![node](https://user-images.githubusercontent.com/6952638/71177167-a4cd8980-226b-11ea-9095-c96d5b96faa7.png)
 
-MacOS 10.15:
-
 ```bash
 # Install
 brew install node@12
@@ -187,8 +171,6 @@ brew link node@12 --force
 [Back to top ↑](#table-of-contents)
 
 ![yarn](https://user-images.githubusercontent.com/6952638/70372314-a13a1a00-18dd-11ea-9cdb-7b976c2beab8.png)
-
-MacOS 10.15:
 
 ```bash
 # Install
