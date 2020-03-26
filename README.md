@@ -14,7 +14,7 @@ These instructions are also available for [Windows](https://github.com/RomainFal
 
 * [Important notice](#important-notice)
 * [Quickstart](#quickstart)
-* [Manual configuration](#manual-configuration-dev-environment)
+* [Manual configuration](#manual-configuration)
     1. [Prerequisites](#prerequisites)
     2. [Git](#git)
     3. [Symfony CLI](#symfony-cli)
