@@ -1,10 +1,10 @@
-# The Symfony dev instructions kit for macOS
+# The PHP/Symfony dev instructions kit for macOS
 
 **This repository is part of the [symfony-dev-deploy](https://github.com/RomainFallet/symfony-dev-deploy) repository.**
 
-![Dev environment install scripts](https://github.com/RomainFallet/symfony-dev-macos/workflows/Test%20dev%20env%20install%20script/badge.svg)
+![Test dev env install script](https://github.com/RomainFallet/symfony-dev-macos/workflows/Test%20dev%20env%20install%20script/badge.svg)
 
-The purpose of this repository is to provide instructions to configure a Symfony development environment on **macOS 10.15**.
+The purpose of this repository is to provide instructions to configure a PHP/Symfony development environment on **macOS 10.15**.
 
 The goal is to provide an opinionated, fully tested environment, that just work.
 
@@ -14,7 +14,7 @@ These instructions are also available for [Windows](https://github.com/RomainFal
 
 * [Important notice](#important-notice)
 * [Quickstart](#quickstart)
-* [Manual configuration](#manual-configuration-dev-environment)
+* [Manual configuration](#manual-configuration)
     1. [Prerequisites](#prerequisites)
     2. [Git](#git)
     3. [Symfony CLI](#symfony-cli)
@@ -36,8 +36,6 @@ Its purpose in not to be bullet-proof neither to handle all cases. It's  just he
 
 [Back to top ↑](#table-of-contents)
 
-MacOS 10.15:
-
 ```bash
 # Get and execute script directly
 bash -c "$(curl -L -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/RomainFallet/symfony-dev-macos/master/macos10.15_configure_dev_env.sh)"
@@ -50,8 +48,6 @@ bash -c "$(curl -L -H 'Cache-Control: no-cache' https://raw.githubusercontent.co
 ### Prerequisites
 
 [Back to top ↑](#table-of-contents)
-
-MacOS 10.15:
 
 ![homebrew](https://user-images.githubusercontent.com/6952638/70372309-a0a18380-18dd-11ea-8280-e86e84f51043.png)
 
@@ -70,8 +66,6 @@ Open the Terminal app and type:
 
 ![git](https://user-images.githubusercontent.com/6952638/71176962-3a1c4e00-226b-11ea-83a1-5a66bd37a68b.png)
 
-MacOS 10.15:
-
 ```bash
 # Install
 brew install git
@@ -86,8 +80,6 @@ export PATH="/usr/local/bin:$PATH"
 
 ![symfony](https://user-images.githubusercontent.com/6952638/71176964-3ab4e480-226b-11ea-8522-081106cbff50.png)
 
-MacOS 10.15:
-
 ```bash
 # Download executable in local user folder
 curl -sS https://get.symfony.com/cli/installer | bash
@@ -101,8 +93,6 @@ sudo mv ~/.symfony/bin/symfony /usr/local/bin/symfony
 [Back to top ↑](#table-of-contents)
 
 ![php](https://user-images.githubusercontent.com/6952638/70372327-bca52500-18dd-11ea-8638-7cdab7c5d6e0.png)
-
-MacOS 10.15:
 
 ```bash
 # Install
@@ -119,9 +109,13 @@ pecl install xdebug
 
 # Update some configuration in php.ini
 phpinipath=$(php -r "echo php_ini_loaded_file();")
-sudo sed -i '.backup' -e 's/post_max_size = 8M/post_max_size = 64M/g' "${phpinipath}"
-sudo sed -i '.backup' -e 's/upload_max_filesize = 8M/upload_max_filesize = 64M/g' "${phpinipath}"
-sudo sed -i '.backup' -e 's/memory_limit = 128M/memory_limit = -1/g' "${phpinipath}"
+sudo sed -i'.backup' -e 's/post_max_size = 8M/post_max_size = 64M/g' "${phpinipath}"
+sudo sed -i'.backup' -e 's/upload_max_filesize = 8M/upload_max_filesize = 64M/g' "${phpinipath}"
+sudo sed -i'.backup' -e 's/memory_limit = 128M/memory_limit = -1/g' "${phpinipath}"
+sudo sed -i'.backup' -e 's/disable_functions =/disable_functions = error_reporting,ini_set,exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source/g' "${phpinipath}" || exit 1
+sudo sed -i'.backup' -e 's/display_errors = Off/display_errors = On/g' "${phpinipath}" || exit 1
+sudo sed -i'.backup' -e 's/display_startup_errors = Off/display_startup_errors = On/g' "${phpinipath}" || exit 1
+sudo sed -i'.backup' -e 's/error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT/error_reporting = E_ALL/g' "${phpinipath}" || exit 1
 ```
 
 **Installed PHP Modules:** bcmath, bz2, calendar, Core, ctype, curl, date, dba, dom, exif, fileinfo, filter, ftp, gd, gettext, gmp, hash, iconv, intl, json, ldap, libxml, mbstring, mysqli, mysqlnd, odbc, openssl, pcntl, pcre, PDO, pdo_dblib, pdo_mysql, PDO_ODBC, pdo_pgsql, pdo_sqlite, pgsql, Phar, phpdbg_webhelper, posix, pspell, readline, Reflection, session, shmop, SimpleXML, soap, sockets, sodium, SPL, sqlite3, standard, sysvmsg, sysvsem, sysvshm, tidy, tokenizer, wddx, xdebug, xml, xmlreader, xmlrpc, xmlwriter, xsl, Zend OPcache, zip, zlib
@@ -133,8 +127,6 @@ sudo sed -i '.backup' -e 's/memory_limit = 128M/memory_limit = -1/g' "${phpinipa
 [Back to top ↑](#table-of-contents)
 
 ![composer](https://user-images.githubusercontent.com/6952638/70372308-a008ed00-18dd-11ea-9ee0-61d017dfa488.png)
-
-MacOS 10.15:
 
 ```bash
 # Download installer
@@ -156,8 +148,6 @@ sudo mv /usr/local/bin/composer.phar /usr/local/bin/composer
 
 ![mariadb](https://user-images.githubusercontent.com/6952638/71176963-3a1c4e00-226b-11ea-9627-e64caabef009.png)
 
-MacOS 10.15:
-
 ```bash
 # Install
 brew install mariadb@10.4
@@ -172,8 +162,6 @@ brew services start mariadb
 
 ![node](https://user-images.githubusercontent.com/6952638/71177167-a4cd8980-226b-11ea-9095-c96d5b96faa7.png)
 
-MacOS 10.15:
-
 ```bash
 # Install
 brew install node@12
@@ -187,8 +175,6 @@ brew link node@12 --force
 [Back to top ↑](#table-of-contents)
 
 ![yarn](https://user-images.githubusercontent.com/6952638/70372314-a13a1a00-18dd-11ea-9cdb-7b976c2beab8.png)
-
-MacOS 10.15:
 
 ```bash
 # Install
