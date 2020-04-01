@@ -74,6 +74,10 @@ brew install git
 
 # Reload $PATH
 export PATH="/usr/local/bin:$PATH"
+
+# Configure Git
+git config --global user.name "$(read -r -p 'Enter your Git name: ' gitname && echo "${gitname}")"
+git config --global user.email "$(read -r -p 'Enter your Git email: ' gitemail && echo "${gitemail}")"
 ```
 
 ### Symfony CLI
