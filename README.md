@@ -109,7 +109,7 @@ pecl install xdebug
 
 # Make a backup of the config file
 phpinipath=$(php -r "echo php_ini_loaded_file();")
-sudo cp "${phpinipath}" $(dirname "${phpinipath}")/.php.ini.backup
+sudo cp "${phpinipath}" "$(dirname "${phpinipath}")/.php.ini.backup"
 
 # Update some configuration in php.ini
 sudo sed -i'.tmp' -e 's/post_max_size = 8M/post_max_size = 64M/g' "${phpinipath}"
