@@ -1,5 +1,7 @@
 # The PHP/Symfony dev instructions kit for macOS
 
+![logo-mac](https://user-images.githubusercontent.com/6952638/78180989-e2919f00-7463-11ea-943f-f4c645487344.png)
+
 **This repository is part of the [symfony-dev-deploy](https://github.com/RomainFallet/symfony-dev-deploy) repository.**
 
 ![Test dev env install script](https://github.com/RomainFallet/symfony-dev-macos/workflows/Test%20dev%20env%20install%20script/badge.svg)
