@@ -1,8 +1,8 @@
 # The PHP/Symfony dev instructions kit for macOS
 
-**This repository is part of the [symfony-dev-deploy](https://github.com/RomainFallet/symfony-dev-deploy) repository.**
+![logo-mac](https://user-images.githubusercontent.com/6952638/78180989-e2919f00-7463-11ea-943f-f4c645487344.png)
 
-![Test dev env install script](https://github.com/RomainFallet/symfony-dev-macos/workflows/Test%20dev%20env%20install%20script/badge.svg)
+**This repository is part of the [symfony-dev-deploy](https://github.com/RomainFallet/symfony-dev-deploy) repository.**
 
 The purpose of this repository is to provide instructions to configure a PHP/Symfony development environment on **macOS 10.15**.
 
@@ -113,7 +113,7 @@ pecl install xdebug
 
 # Make a backup of the config file
 phpinipath=$(php -r "echo php_ini_loaded_file();")
-sudo cp "${phpinipath}" $(dirname "${phpinipath}")/.php.ini.backup
+sudo cp "${phpinipath}" "$(dirname "${phpinipath}")/.php.ini.backup"
 
 # Update some configuration in php.ini
 sudo sed -i'.tmp' -e 's/post_max_size = 8M/post_max_size = 64M/g' "${phpinipath}"
@@ -161,7 +161,7 @@ sudo mv /usr/local/bin/composer.phar /usr/local/bin/composer
 brew install mariadb@10.4
 
 # Start MariaDB
-brew services start mariadb
+sudo brew services start mariadb
 ```
 
 ### NodeJS 12
@@ -175,7 +175,7 @@ brew services start mariadb
 brew install node@12
 
 # Add node to $PATH
-brew link node@12 --force
+sudo brew link node@12 --force
 ```
 
 ### Yarn 1.21
