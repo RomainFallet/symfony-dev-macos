@@ -40,7 +40,7 @@ Its purpose in not to be bullet-proof neither to handle all cases. It's  just he
 
 ```bash
 # Get and execute script directly
-bash -c "$(curl -L -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/RomainFallet/symfony-dev-macos/master/macos10.15_configure_dev_env.sh)"
+/bin/bash -c "$(curl -L -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/RomainFallet/symfony-dev-macos/master/macos10.15_configure_dev_env.sh)"
 ```
 
 *See [manual instructions](#manual-configuration) for details.*
