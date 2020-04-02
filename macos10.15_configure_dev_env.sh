@@ -86,7 +86,7 @@ composer -V || exit 1
 brew install mariadb@10.4 || exit 1
 
 # Start MariaDB
-brew services start mariadb || exit 1
+sudo brew services start mariadb || exit 1
 
 sudo mysql -e "SELECT VERSION();" || exit 1
 
@@ -96,7 +96,7 @@ sudo mysql -e "SELECT VERSION();" || exit 1
 brew install node@12 || exit 1
 
 # Add node to $PATH
-brew link node@12 --force || exit 1
+sudo brew link node@12 --force || exit 1
 
 node -v || exit 1
 npm -v || exit 1

@@ -40,7 +40,7 @@ Its purpose in not to be bullet-proof neither to handle all cases. It's  just he
 
 ```bash
 # Get and execute script directly
-/bin/bash -c "$(curl -L -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/RomainFallet/symfony-dev-macos/master/macos10.15_configure_dev_env.sh)"
+bash -c "$(curl -L -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/RomainFallet/symfony-dev-macos/master/macos10.15_configure_dev_env.sh)"
 ```
 
 *See [manual instructions](#manual-configuration) for details.*
@@ -163,7 +163,7 @@ sudo mv /usr/local/bin/composer.phar /usr/local/bin/composer
 brew install mariadb@10.4
 
 # Start MariaDB
-brew services start mariadb
+sudo brew services start mariadb
 ```
 
 ### NodeJS 12
@@ -177,7 +177,7 @@ brew services start mariadb
 brew install node@12
 
 # Add node to $PATH
-brew link node@12 --force
+sudo brew link node@12 --force
 ```
 
 ### Yarn 1.21
